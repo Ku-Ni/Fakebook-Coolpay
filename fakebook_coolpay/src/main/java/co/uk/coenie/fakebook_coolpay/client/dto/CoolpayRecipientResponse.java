@@ -3,17 +3,10 @@ package co.uk.coenie.fakebook_coolpay.client.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CoolpayRecipientResponse {
-	@JsonProperty("id")
-	private String id;
-	@JsonProperty("name")
-	private String name;
+	@JsonProperty("recipient")
+	private CoolpayRecipient recipient;
 	
-	
-	public String getId() {
-		return id;
+	public CoolpayRecipient getRecipient() {
+		return recipient;
 	}
-	public String getName() {
-		return name;
-	}
-	
 }

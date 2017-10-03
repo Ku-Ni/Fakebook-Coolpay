@@ -4,16 +4,16 @@ import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayPaymentListResponse;
 import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayPaymentRequest;
 import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayPaymentResponse;
 import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayRecipientRequest;
-import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayRecipientResponse;
+import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayRecipient;
 
 public interface CoolpayClient {
 	
 	/**
 	 * Logs into API and adds token to restTemplate interceptors
 	 * 
-	 * @return True if successfully logged in
+	 * @return API Token
 	 */
-	boolean login();
+	String login();
 	
 	/**
 	 * Checks if supplied recipient exists and adds recipient if not.
@@ -23,7 +23,7 @@ public interface CoolpayClient {
 	 * @return
 	 * @throws TooManyResultsException If more than one recipient is returned
 	 */
-	CoolpayRecipientResponse checkAndCreateRecipient(CoolpayRecipientRequest request) throws TooManyResultsException;
+	CoolpayRecipient checkAndCreateRecipient(CoolpayRecipientRequest request) throws TooManyResultsException;
 	
 	/**
 	 * Makes payment to specified recipient

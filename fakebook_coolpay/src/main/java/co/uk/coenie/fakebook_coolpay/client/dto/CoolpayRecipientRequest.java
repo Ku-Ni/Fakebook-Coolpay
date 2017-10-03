@@ -1,16 +1,45 @@
 package co.uk.coenie.fakebook_coolpay.client.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CoolpayRecipientRequest {
-	@JsonProperty("name")
-	private String name;
+
+	@JsonProperty("recipient")
+	private Recipient recipient;
+
 	
+	public CoolpayRecipientRequest() {
+		recipient = new Recipient();
+	}
+
+	
+	public CoolpayRecipientRequest(String recipientName) {
+		this();
+		recipient.setName(recipientName);
+	}
+
+	@JsonIgnore
 	public String getName() {
-		return name;
+		return recipient.getName();
+	}
+
+	public void setName(String recipientName) {
+		recipient.setName(recipientName);
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	
+	public class Recipient{
+		@JsonProperty("name")
+		private String name;
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
 	}
 }

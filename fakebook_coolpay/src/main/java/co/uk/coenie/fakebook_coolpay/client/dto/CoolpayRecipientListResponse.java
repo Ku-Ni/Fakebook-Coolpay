@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CoolpayRecipientListResponse {
 	@JsonProperty("recipients")
-	private List<CoolpayRecipientResponse> recipients;
+	private List<CoolpayRecipient> recipients;
 
-	public List<CoolpayRecipientResponse> getRecipients(){
+	public List<CoolpayRecipient> getRecipients(){
 		return recipients;
 	}
 }

@@ -4,33 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CoolpayPaymentResponse {
 
-	@JsonProperty("id")
-	private String id;
-	@JsonProperty("amount")
-	private String amount;
-	@JsonProperty("currency")
-	private String currency;
-	@JsonProperty("recipient_id")
-	private String recipientId;
-	@JsonProperty("status")
-	private String status;
-	
-	
-	public String getId() {
-		return id;
+	@JsonProperty("payment")
+	private CoolpayPayment payment;
+
+	public CoolpayPayment getPayment() {
+		return payment;
 	}
-	public String getAmount() {
-		return amount;
-	}
-	public String getCurrency() {
-		return currency;
-	}
-	public String getRecipientId() {
-		return recipientId;
-	}
-	public String getStatus() {
-		return status;
-	}
-	
-	
+
 }
