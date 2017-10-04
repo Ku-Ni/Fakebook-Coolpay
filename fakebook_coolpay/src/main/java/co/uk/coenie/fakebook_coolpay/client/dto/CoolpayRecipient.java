@@ -8,7 +8,6 @@ public class CoolpayRecipient {
 	@JsonProperty("name")
 	private String name;
 	
-	
 	public String getId() {
 		return id;
 	}

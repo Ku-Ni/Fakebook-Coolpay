@@ -2,7 +2,6 @@ package co.uk.coenie.fakebook_coolpay.client;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,6 +13,7 @@ import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayPaymentListResponse;
 import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayPaymentRequest;
 import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayPaymentResponse;
 import co.uk.coenie.fakebook_coolpay.client.dto.CoolpayRecipient;
@@ -74,7 +74,10 @@ public class CoolpayClientTest {
 
 	@Test
 	public final void testListPayments() {
-		fail("Not yet implemented"); // TODO
+		coolpayClient.login();
+		
+		CoolpayPaymentListResponse response = coolpayClient.listPayments();
+		assertTrue(response.getPayments().size() > 0);
 	}
 
 }

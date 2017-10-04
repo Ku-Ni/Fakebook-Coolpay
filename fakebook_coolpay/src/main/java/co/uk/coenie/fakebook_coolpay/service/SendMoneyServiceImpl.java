@@ -44,7 +44,8 @@ public class SendMoneyServiceImpl implements SendMoneyService{
 		sendMoneyResponse.setCoolpayPaymentId(paymentResponse.getPayment().getId());
 		sendMoneyResponse.setStatus(paymentResponse.getPayment().getStatus());
 
-		//	Check whether a payment was successful
+		// Check whether a payment was successful
+		// Probably unnecessary, depends how quickly payments are processed, could add wait()
 		if (!"paid".equals(sendMoneyResponse.getStatus())) //TODO: create Status Enum
 			sendMoneyResponse.setStatus(retrieveUpdatedPayment(paymentResponse.getPayment()).getStatus());
 		
