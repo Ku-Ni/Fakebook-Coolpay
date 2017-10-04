@@ -15,4 +15,32 @@ public class SendMoneyResponse {
 	private String currency;
 	@JsonProperty("status")
 	private String status;
+	
+	
+	public SendMoneyResponse(SendMoneyRequest request) {
+		amount = String.valueOf(request.getAmount());
+		currency = request.getCurrency();
+		coolpayRecipientId = request.getRecipientId();
+		recipientName = request.getRecipientName();
+	}
+	
+
+	public void setCoolpayPaymentId(String coolpayPaymentId) {
+		this.coolpayPaymentId = coolpayPaymentId;
+	}
+	public String getCoolpayPaymentId() {
+		return coolpayPaymentId;
+	}
+	
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getStatus() {
+		return status;
+	}
+
+
+	
+		
 }
